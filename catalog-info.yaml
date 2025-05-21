@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ee8r8vbko-python-gitops
+  description: This is GitOps manifest for ee8r8vbko-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=ee8r8vbko-python
+    backstage.io/kubernetes-id: ee8r8vbko-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: ee8r8vbko-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:ee8r8vbko-python
